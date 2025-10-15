@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Report Letter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.5;
+    }
+    .form-section {
+      margin-bottom: 20px;
+    }
+    .letter {
+      margin-top: 30px;
+      white-space: pre-wrap;
+      border: 1px solid #ccc;
+      padding: 20px;
+      background: #fafafa;
+    }
+    input[type="text"], input[type="date"] {
+      padding: 5px;
+      font-size: 1em;
+      width: 300px;
+    }
+    button {
+      padding: 8px 16px;
+      font-size: 1em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Student Report Letter</h1>
+
+  <div class="form-section">
+    <label>
+      Date: <input type="date" id="inputDate" />
+    </label>
+  </div>
+
+  <div class="form-section">
+    <label>
+      Student Name: <input type="text" id="inputName" placeholder="Enter student name" />
+    </label>
+  </div>
+
+  <div class="form-section">
+    <label>
+      Course: <input type="text" id="inputCourse" placeholder="Enter course / program" />
+    </label>
+  </div>
+
+  <div class="form-section">
+    <button onclick="generateLetter()">Generate Letter</button>
+  </div>
+
+  <div id="letterContainer" class="letter"></div>
+
+  <script>
+    function generateLetter() {
+      const dateInput = document.getElementById('inputDate').value;
+      const nameInput = document.getElementById('inputName').value.trim();
+      const courseInput = document.getElementById('inputCourse').value.trim();
+
+      const formattedDate = dateInput
+        ? new Date(dateInput).toLocaleDateString()
+        : '________________________';
+      const studentName = nameInput || '________________________';
+      const courseName = courseInput || '________________________';
+
+      const letterText = `
+Arellano University
+239 Pag-asa Street, Pasig, 1606 Metro Manila
+Pasig City, Region 4A
+
+Date: ${formattedDate}
+
+To  
+The Parents / Guardians  
+
+
+Dear Sir / Madam,
+
+This is to certify that **${studentName}** (Student Name) is enrolled in the **${courseName}** course / program at **[Arellano University]**.
+
+During this period, he / she has shown consistent performance in academics, good conduct, and regular attendance. We recognize his / her efforts and encourage continued growth and success in future endeavors.
+
+We trust that this record will assist in further studies or any other purposes as needed. Should you require any further details, please feel free to contact the school office.
+
+Sincerely, 
+
+ 
+_______________________________  
+Paano, Adrian 
+      `;
+
+      document.getElementById('letterContainer').textContent = letterText;
+    }
+  </script>
+
+</body>
+</html>

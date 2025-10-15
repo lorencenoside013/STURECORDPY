@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SIMS Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: url('https://i.pinimg.com/originals/08/6f/8b/086f8b5566b18e832cabce4354543366.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    .overlay {
+      background: rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center">
+  <div class="overlay min-h-screen w-full flex items-center justify-center">
+    <div class="bg-white/2 backdrop-blur-md rounded-2xl shadow-xl p-8 w-full max-w-md">
+      <div class="flex flex-col items-center mb-6">
+        <div class="rounded-full bg-gradient-to-r from-indigo-700 to-cyan-500 text-white p-3 shadow-lg mb-1">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L3 7v7c0 5 4 9 9 9s9-4 9-9V7l-9-5z" fill="white"/>
+          </svg>
+        </div>
+        <h1 class="text-xl font-semibold">StuRecordPy</h1>
+        <p class="text-sm text-slate-500">Login in to proceed</p>
+      </div>
+
+      <!-- LOGIN FORM -->
+      <form class="space-y-5" onsubmit="return loginUser(event)">
+        <div>
+          <label for="username" class="block text-sm font-medium text-white">Username</label>
+          <input type="text" id="username" name="username" placeholder="Enter username"
+                 class="mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none" required>
+        </div>
+
+        <!-- PASSWORD WITH SHOW BUTTON -->
+        <div>
+          <label for="password" class="block text-sm font-medium text-white">Password</label>
+          <div class="relative">
+            <input type="password" id="password" name="password" placeholder="Enter password"
+                   class="mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none pr-10" required>
+            <button type="button" id="togglePassword"
+                    class="absolute inset-y-0 right-3 flex items-center text-gray-400">
+              👁️
+            </button>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between text-sm">
+          <label class="flex items-center gap-2 text-white">
+            <input type="checkbox" class="rounded border-white">
+            Remember me
+          </label>
+          <a href="#" class="text-indigo-600 hover:underline">Forgot password?</a>
+        </div>
+
+        <button type="submit"
+                class="w-full py-3 rounded-lg bg-indigo-600 text-white font-medium shadow hover:bg-indigo-700">
+          Login
+        </button>
+      </form>
+
+      <div class="mt-6 text-center text-sm text-white">
+        © 2025 StuRecordPy. All rights reserved.
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // ✅ LOGIN FUNCTION
+    function loginUser(event) {
+      event.preventDefault(); // stop form reload
+
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      // Multiple user credentials
+      if (username === "Laurence" && password === "Dagsil") {
+        alert("Login successful!");
+        window.location.href = "StudentProfile.html";
+      } 
+      else if (username === "christian" && password === "barutag") {
+        alert("Login successful!");
+        window.location.href = "BarutagProfile.html";
+      }
+      else if (username === "justine" && password === "mollenido") {
+        alert("Login successful!");
+        window.location.href = "Mollenido.html";
+      }
+      else if (username === "yoseph" && password === "posada") {
+        alert("Login successful!");
+        window.location.href = "posada.html";
+      }
+      else if (username === "matt" && password === "bagnol") {
+        alert("Login successful!");
+        window.location.href = "bagnol.html";
+      }
+      else if (username === "neil" && password === "borja") {
+        alert("Login successful!");
+        window.location.href = "borja.html";
+      }
+      else {
+        alert("Invalid username or password!");
+      }
+    }
+
+    // ✅ SHOW/HIDE PASSWORD FUNCTION
+    const togglePassword = document.getElementById("togglePassword");
+    const passwordInput = document.getElementById("password");
+
+    togglePassword.addEventListener("click", function () {
+      const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+      passwordInput.setAttribute("type", type);
+      // Change icon text
+      togglePassword.textContent = type === "password" ? "👁️" : "🙈";
+    });
+  </script>
+</body>
+</html>

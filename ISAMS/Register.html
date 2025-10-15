@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arellano StuRecordPy — Registration</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: url('https://i.pinimg.com/originals/08/6f/8b/086f8b5566b18e832cabce4354543366.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    .overlay {
+      background: rgba(0, 0, 0, 0.5); /* dark overlay for readability */
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center">
+  <div class="overlay min-h-screen w-full flex items-center justify-center">
+    <div class="bg-white/2   backdrop-blur-md rounded-2xl shadow-xl p-8 w-full max-w-md">
+      <div class="flex flex-col items-center mb-6">
+        <div class="rounded-full bg-gradient-to-r from-indigo-700 to-cyan-500 text-white p-3 shadow-lg mb-1">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L3 7v7c0 5 4 9 9 9s9-4 9-9V7l-9-5z" fill="white"/>
+          </svg>
+        </div>
+        <h1 class="text-xl font-semibold">Arellano StuRecordPy</h1>
+        <p class="text-sm text-slate-500">Create a new account</p>
+      </div>
+
+      <!-- REGISTRATION FORM -->
+      <form class="space-y-5" onsubmit="return registerUser(event)">
+        <div>
+          <label for="fullname" class="block text-sm font-medium text-white">Full Name</label>
+          <input type="text" id="fullname" name="fullname" placeholder="Enter full name" class="mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-cyan-500 focus:outline-none" required>
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-medium text-white">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter email address" class="mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-cyan-500 focus:outline-none" required>
+        </div>
+
+        <div>
+          <label for="username" class="block text-sm font-medium text-white">Username</label>
+          <input type="text" id="username" name="username" placeholder="Choose a username" class="mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-cyan-500 focus:outline-none" required>
+        </div>
+
+        <div>
+          <label for="password" class="block text-sm font-medium text-white">Password</label>
+          <input type="password" id="password" name="password" placeholder="Create password" class="mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-cyan-500 focus:outline-none" required>
+        </div>
+
+        <div>
+          <label for="confirm-password" class="block text-sm font-medium text-white">Confirm Password</label>
+          <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm password" class="mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-cyan-500 focus:outline-none" required>
+        </div>
+
+        <button type="submit" class="w-full py-3 rounded-lg bg-cyan-600 text-white font-medium shadow hover:bg-cyan-700">Register</button>
+      </form>
+
+     <div class="mt-4 text-center text-white">
+  Already have an account?
+  <a href="landing.html" class="text-indigo-600 hover:underline">Login here</a>
+</div>
+
+
+      <div class="mt-6 text-center text-sm text-white">
+        © 2025 StuRecordPy. All rights reserved.
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    function registerUser(event) {
+      event.preventDefault();
+
+      const fullname = document.getElementById("fullname").value;
+      const email = document.getElementById("email").value;
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirm-password").value;
+
+      if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+        return false;
+      }
+
+      // Placeholder for backend connection
+      alert("Registration successful! You can now log in.");
+      window.location.href = "index.html"; // redirect to login
+    }
+  </script>
+</body>
+</html

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance Reports</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-purple-700 text-white p-4 shadow">
+    <h1 class="text-xl font-bold">Attendance Reports</h1>
+  </header>
+
+  <!-- Main Content -->
+  <main class="p-6">
+    <!-- Summary Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+      <div class="bg-green-500 text-white p-4 rounded-lg shadow">
+        <h2 class="text-lg font-semibold">Total Present</h2>
+        <p class="text-2xl font-bold">6</p>
+      </div>
+      <div class="bg-red-500 text-white p-4 rounded-lg shadow">
+        <h2 class="text-lg font-semibold">Total Absent</h2>
+        <p class="text-2xl font-bold">3</p>
+      </div>
+      <div class="bg-yellow-500 text-white p-4 rounded-lg shadow">
+        <h2 class="text-lg font-semibold">Total Late</h2>
+        <p class="text-2xl font-bold">1</p>
+      </div>
+    </div>
+
+    <!-- Report Table -->
+    <div class="bg-white p-5 rounded-lg shadow">
+      <h2 class="text-lg font-semibold mb-4">Detailed Report</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full border border-gray-200">
+          <thead class="bg-gray-100">
+            <tr>
+              <th class="px-4 py-2 border">#</th>
+              <th class="px-4 py-2 border">Student Name</th>
+              <th class="px-4 py-2 border">Present</th>
+              <th class="px-4 py-2 border">Absent</th>
+              <th class="px-4 py-2 border">Late</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="px-4 py-2 border">1</td>
+              <td class="px-4 py-2 border font-bold text-gray-700">Cruz, Juan</td>
+              <td class="px-4 py-2 border text-green-600 font-semibold">5</td>
+              <td class="px-4 py-2 border text-red-600 font-semibold">0</td>
+              <td class="px-4 py-2 border text-yellow-600 font-semibold">1</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border">2</td>
+              <td class="px-4 py-2 border font-bold text-gray-700">Santos, Marie</td>
+              <td class="px-4 py-2 border text-green-600 font-semibold">3</td>
+              <td class="px-4 py-2 border text-red-600 font-semibold">2</td>
+              <td class="px-4 py-2 border text-yellow-600 font-semibold">1</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border">3</td>
+              <td class="px-4 py-2 border font-bold text-gray-700">Ramirez, Pedro</td>
+              <td class="px-4 py-2 border text-green-600 font-semibold">4</td>
+              <td class="px-4 py-2 border text-red-600 font-semibold">1</td>
+              <td class="px-4 py-2 border text-yellow-600 font-semibold">1</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border">4</td>
+              <td class="px-4 py-2 border font-bold text-gray-700">Lopez, Ana</td>
+              <td class="px-4 py-2 border text-green-600 font-semibold">6</td>
+              <td class="px-4 py-2 border text-red-600 font-semibold">0</td>
+              <td class="px-4 py-2 border text-yellow-600 font-semibold">0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Back Button -->
+    <div class="mt-6">
+      <a href="attendance.html" class="bg-purple-700 text-white px-4 py-2 rounded-lg shadow hover:bg-purple-800">
+        ⬅ Back to Attendance
+      </a>
+    </div>
+  </main>
+</body>
+</html>

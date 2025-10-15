@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arellano StuRecordPy — Registration</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: url('https://i.pinimg.com/originals/08/6f/8b/086f8b5566b18e832cabce4354543366.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    .overlay {
+      background: rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center">
+  <div class="overlay min-h-screen w-full flex items-center justify-center">
+    <div class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md">
+      <div class="flex flex-col items-center mb-6">
+        <div class="rounded-full bg-gradient-to-r from-indigo-700 to-cyan-500 text-white p-3 shadow-lg mb-1">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2L3 7v7c0 5 4 9 9 9s9-4 9-9V7l-9-5z" fill="white"/>
+          </svg>
+        </div>
+        <h1 class="text-xl font-semibold">Arellano StuRecordPy</h1>
+        <p class="text-sm text-slate-500">Create a new student account</p>
+      </div>
+
+      <!-- REGISTRATION FORM -->
+      <form class="space-y-5" onsubmit="return registerUser(event)">
+        
+        <!-- PROFILE PICTURE -->
+        <div>
+          <label for="profilePic" class="block text-sm font-medium text-slate-600">Profile Picture</label>
+          <input type="file" id="profilePic" name="profilePic" accept="image/*"
+                 class="mt-1 w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-cyan-500 focus:outline-none">
+        </div>
+
+        <!-- FULL NAME -->
+        <div>
+          <label for="fullname" class="block text-sm font-medium text-slate-600">Full Name</label>
+          <input type="text" id="fullname" name="fullname" placeholder="Enter full name"
+                 class="mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-cyan-500 focus:outline-none" required>
+        </div>
+
+        <!-- COURSE -->
+        <div>
+          <label for="course" class="block text-sm font-medium text-slate-600">Course</label>
+          <select id="course" name="course"
+                  class="mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-cyan-500 focus:outline-none" required>
+            <option value="">Select your course</option>
+            <option value="BS Information Technology">BS Information Technology</option>
+            <option value="BS Hospitality Management">BS Hospitality Management</option>
+            <option value="BS Computer Science">BS Computer Science</option>
+            <option value="BS Business Administration">BS Business Administration</option>
+          </select>
+        </div>
+
+        <!-- ADDRESS -->
+        <div>
+          <label for="address" class="block text-sm font-medium text-slate-600">Address</label>
+          <input type="text" id="address" name="address" placeholder="Enter home address"
+                 class="mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-cyan-500 focus:outline-none" required>
+        </div>
+
+        <!-- EMAIL -->
+        <div>
+          <label for="email" class="block text-sm font-medium text-slate-600">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter email address"
+                 class="mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-cyan-500 focus:outline-none" required>
+        </div>
+
+        <!-- USERNAME -->
+        <div>
+          <label for="username" class="block text-sm font-medium text-slate-600">Username</label>
+          <input type="text" id="username" name="username" placeholder="Choose a username"
+                 class="mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-cyan-500 focus:outline-none" required>
+        </div>
+
+        <!-- PASSWORD -->
+        <div>
+          <label for="password" class="block text-sm font-medium text-slate-600">Password</label>
+          <div class="relative">
+            <input type="password" id="password" name="password" placeholder="Create password"
+                   class="mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-cyan-500 focus:outline-none pr-10" required>
+            <button type="button" id="togglePassword" class="absolute inset-y-0 right-3 flex items-center text-gray-500">
+              👁️
+            </button>
+          </div>
+        </div>
+
+        <!-- CONFIRM PASSWORD -->
+        <div>
+          <label for="confirm-password" class="block text-sm font-medium text-slate-600">Confirm Password</label>
+          <div class="relative">
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm password"
+                   class="mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-cyan-500 focus:outline-none pr-10" required>
+            <button type="button" id="toggleConfirmPassword" class="absolute inset-y-0 right-3 flex items-center text-gray-500">
+              👁️
+            </button>
+          </div>
+        </div>
+
+        <!-- REGISTER BUTTON -->
+        <button type="submit" class="w-full py-3 rounded-lg bg-cyan-600 text-white font-medium shadow hover:bg-cyan-700">
+          Register
+        </button>
+      </form>
+
+      <!-- LOGIN LINK -->
+      <div class="mt-4 text-center text-sm">
+        Already have an account?
+        <a href="StudentLogin.html" class="text-indigo-600 hover:underline">Login here</a>
+      </div>
+
+      <div class="mt-6 text-center text-sm text-slate-500">
+        © 2025 Your Institution. All rights reserved.
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // Registration Function
+    function registerUser(event) {
+      event.preventDefault();
+
+      const fullname = document.getElementById("fullname").value;
+      const email = document.getElementById("email").value;
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirm-password").value;
+      const course = document.getElementById("course").value;
+      const address = document.getElementById("address").value;
+      const profilePic = document.getElementById("profilePic").files[0];
+
+      if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+        return false;
+      }
+
+      const picName = profilePic ? profilePic.name : "No image uploaded";
+
+      alert(
+        `Registration Successful!\n\nName: ${fullname}\nEmail: ${email}\nUsername: ${username}\nCourse: ${course}\nAddress: ${address}\nProfile Picture: ${picName}`
+      );
+
+      window.location.href = "StudentLogin.html";
+    }
+
+    // ✅ Show/Hide Password Logic
+    const togglePassword = document.getElementById("togglePassword");
+    const toggleConfirmPassword = document.getElementById("toggleConfirmPassword");
+    const passwordInput = document.getElementById("password");
+    const confirmInput = document.getElementById("confirm-password");
+
+    togglePassword.addEventListener("click", function () {
+      const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+      passwordInput.setAttribute("type", type);
+      togglePassword.textContent = type === "password" ? "👁️" : "🙈";
+    });
+
+    toggleConfirmPassword.addEventListener("click", function () {
+      const type = confirmInput.getAttribute("type") === "password" ? "text" : "password";
+      confirmInput.setAttribute("type", type);
+      toggleConfirmPassword.textContent = type === "password" ? "👁️" : "🙈";
+    });
+  </script>
+</body>
+</html>

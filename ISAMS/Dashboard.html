@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex min-h-screen bg-gray-100">
+  <!-- Sidebar -->
+  <aside class="w-64 bg-blue-800 text-white flex flex-col">
+    <div class="p-4 text-2xl font-bold border-b border-blue-700">
+      Admin Panel
+    </div>
+    <nav class="flex-1 p-4 space-y-3">
+      <a href="#" class="block py-2 px-3 rounded hover:bg-blue-700">Dashboard</a>
+      <a href="Attendance.html" class="block py-2 px-3 rounded hover:bg-blue-700">Students</a>
+      <a href="reports.html" class="block py-2 px-3 rounded hover:bg-blue-700">Reports</a>
+      <a href="Guidance.html" class="block py-2 px-3 rounded hover:bg-blue-700">Guidance Record</a>
+    </nav>
+    <div class="p-4 border-t border-blue-700">
+      <a href="AdminProfile.html" class="px-4 py-2 rounded-md bg-indigo-600 text-white shadow">Logout</a>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-6">
+    <h1 class="text-3xl font-bold mb-6">Admin Dashboard</h1>
+
+    <!-- Summary Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+      <div class="bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
+        <h2 class="text-gray-600">Total Students</h2>
+        <p class="text-3xl font-bold text-blue-700 mt-2" id="totalStudents">6</p>
+      </div>
+      <div class="bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
+        <h2 class="text-gray-600">Active Courses</h2>
+        <p class="text-3xl font-bold text-blue-700 mt-2">8</p>
+      </div>
+      <div class="bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
+        <h2 class="text-gray-600">Pending Reports</h2>
+        <p class="text-3xl font-bold text-blue-700 mt-2">4</p>
+      </div>
+    </div>
+
+    <!-- Students Table -->
+    <div class="bg-white rounded-xl shadow p-5">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-xl font-semibold">Student List</h2>
+        <button onclick="addStudent()" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+          + Add Student
+        </button>
+      </div>
+
+      <table class="w-full border text-sm">
+        <thead class="bg-gray-200">
+          <tr>
+            <th class="border px-3 py-2">ID</th>
+            <th class="border px-3 py-2">Full Name</th>
+            <th class="border px-3 py-2">Email</th>
+            <th class="border px-3 py-2">Course</th>
+            <th class="border px-3 py-2">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="studentTable">
+          <tr>
+            <td class="border px-3 py-2 text-center">23-34512</td>
+            <td class="border px-3 py-2">Laurence Dagsil</td>
+            <td class="border px-3 py-2">laurence@email.com</td>
+            <td class="border px-3 py-2 text-center">BSIT</td>
+            <td class="border px-3 py-2 text-center">
+              <button class="text-blue-600 hover:underline" onclick="editStudent()">Edit</button> |
+              <button class="text-red-600 hover:underline" onclick="deleteStudent()">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="border px-3 py-2 text-center">23-01035</td>
+            <td class="border px-3 py-2">Barutag, Christian	John</td>
+            <td class="border px-3 py-2">chrsitianbarutag@email.com</td>
+            <td class="border px-3 py-2 text-center">BSIT</td>
+            <td class="border px-3 py-2 text-center">
+              <button class="text-blue-600 hover:underline" onclick="editStudent()">Edit</button> |
+              <button class="text-red-600 hover:underline" onclick="deleteStudent()">Delete</button>
+            </td>
+          </tr>
+		  <tr>
+            <td class="border px-3 py-2 text-center">23-01213</td>
+            <td class="border px-3 py-2">Mollenido, Justine</td>
+            <td class="border px-3 py-2">Justine.Mollenido@email.com</td>
+            <td class="border px-3 py-2 text-center">BSIT</td>
+            <td class="border px-3 py-2 text-center">
+              <button class="text-blue-600 hover:underline" onclick="editStudent()">Edit</button> |
+              <button class="text-red-600 hover:underline" onclick="deleteStudent()">Delete</button>
+            </td>
+          </tr>
+		  <tr>
+            <td class="border px-3 py-2 text-center">23-14324</td>
+            <td class="border px-3 py-2">Posada, Yoseph</td>
+            <td class="border px-3 py-2">Yoseph.Posada@email.com</td>
+            <td class="border px-3 py-2 text-center">BSIT</td>
+            <td class="border px-3 py-2 text-center">
+              <button class="text-blue-600 hover:underline" onclick="editStudent()">Edit</button> |
+              <button class="text-red-600 hover:underline" onclick="deleteStudent()">Delete</button>
+            </td>
+          </tr>
+		  <tr>
+            <td class="border px-3 py-2 text-center">23-20123</td>
+            <td class="border px-3 py-2">Bagnol, Matt</td>
+            <td class="border px-3 py-2">Matt.Bagnol@email.com</td>
+            <td class="border px-3 py-2 text-center">BSIT</td>
+            <td class="border px-3 py-2 text-center">
+              <button class="text-blue-600 hover:underline" onclick="editStudent()">Edit</button> |
+              <button class="text-red-600 hover:underline" onclick="deleteStudent()">Delete</button>
+            </td>
+          </tr>
+		  <tr>
+            <td class="border px-3 py-2 text-center">23-32213</td>
+            <td class="border px-3 py-2">Borja, Neil</td>
+            <td class="border px-3 py-2">Neil.Borja@email.com</td>
+            <td class="border px-3 py-2 text-center">BSIT</td>
+            <td class="border px-3 py-2 text-center">
+              <button class="text-blue-600 hover:underline" onclick="editStudent()">Edit</button> |
+              <button class="text-red-600 hover:underline" onclick="deleteStudent()">Delete</button>
+            </td>
+          </tr>
+		  
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script>
+    function addStudent() {
+      alert("Add Student form will appear here.");
+    }
+    function editStudent() {
+      alert("Edit Student form will appear here.");
+    }
+    function deleteStudent() {
+      if (confirm("Are you sure you want to delete this student?")) {
+        alert("Student deleted successfully.");
+      }
+    }
+    function logout() {
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>

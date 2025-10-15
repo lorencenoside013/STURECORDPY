@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance Record with Colors</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-[url('1.jpg')] bg-cover bg-center">
+
+  <!-- Header -->
+  <header class="bg-blue-600 text-white p-4 shadow flex justify-between items-center">
+    <h1 class="text-xl font-bold">Attendance Record</h1>
+    <button onclick="openModal()" class="bg-green-500 px-4 py-2 rounded-lg shadow hover:bg-green-600">
+      ➕ Add Student
+    </button>
+  </header>
+
+  <!-- Main Content -->
+  <main class="p-6">
+    <div class="bg-white p-5 rounded-lg shadow">
+      <h2 class="text-lg font-semibold mb-4">Class Attendance</h2>
+
+      <!-- Attendance Table -->
+      <div class="overflow-x-auto">
+        <table id="attendanceTable" class="min-w-full border border-gray-200">
+          <thead class="bg-gray-100">
+            <tr>
+              <th class="px-4 py-2 border">#</th>
+              <th class="px-4 py-2 border">Student Name</th>
+              <th class="px-4 py-2 border">Date</th>
+              <th class="px-4 py-2 border">Time</th>
+              <th class="px-4 py-2 border">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Sample Student -->
+           
+            <tr>
+              <td class="px-4 py-2 border">1</td>
+              <td class="px-4 py-2 border font-bold text-gray-700">Cruz, Juan</td>
+              <td class="px-4 py-2 border">2025-10-01</td>
+			  <td class="px-4 py-2 border">7:30 Am - 12:30 Pm</td>
+              <td class="px-4 py-2 border text-green-600 font-semibold">Present</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border">2</td>
+              <td class="px-4 py-2 border font-bold text-gray-700">Santos, Marie</td>
+              <td class="px-4 py-2 border">2025-10-01</td>
+			  <td class="px-4 py-2 border">7:30 Am - 12:30 Pm</td>
+              <td class="px-4 py-2 border text-red-600 font-semibold">Absent</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border">3</td>
+              <td class="px-4 py-2 border font-bold text-gray-700">Ramirez, Pedro</td>
+              <td class="px-4 py-2 border">2025-10-01</td>
+			  <td class="px-4 py-2 border">7:30 Am - 12:30 Pm</td>
+              <td class="px-4 py-2 border text-yellow-600 font-semibold">Late</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border">4</td>
+              <td class="px-4 py-2 border font-bold text-gray-700">Lopez, Ana</td>
+              <td class="px-4 py-2 border">2025-10-01</td>
+			  <td class="px-4 py-2 border">7:30 Am - 12:30 Pm</td>
+              <td class="px-4 py-2 border text-green-600 font-semibold">Present</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border">5</td>
+              <td class="px-4 py-2 border font-bold text-gray-700">Mendoza, Carlos</td>
+              <td class="px-4 py-2 border">2025-10-01</td>
+			  <td class="px-4 py-2 border">7:30 Am - 12:30 Pm</td>
+              <td class="px-4 py-2 border text-red-600 font-semibold">Absent</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border">6</td>
+              <td class="px-4 py-2 border font-bold text-gray-700">Villanueva, Daniel Joseph</td>
+              <td class="px-4 py-2 border">2025-10-01</td>
+			  <td class="px-4 py-2 border">7:30 Am - 12:30 Pm</td>
+              <td class="px-4 py-2 border text-green-600 font-semibold">Present</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border">7</td>
+              <td class="px-4 py-2 border font-bold text-gray-700">Garcia, Katrina Mae</td>
+              <td class="px-4 py-2 border">2025-10-01</td>
+			  <td class="px-4 py-2 border">7:30 Am - 12:30 Pm</td>
+              <td class="px-4 py-2 border text-green-600 font-semibold">Present</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border">8</td>
+              <td class="px-4 py-2 border font-bold text-gray-700">Flores, Joshua Emmanuel</td>
+              <td class="px-4 py-2 border">2025-10-01</td>
+			  <td class="px-4 py-2 border">7:30 Am - 12:30 Pm</td>
+              <td class="px-4 py-2 border text-red-600 font-semibold">Absent</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border">9</td>
+              <td class="px-4 py-2 border font-bold text-gray-700">Torres, Angela Marie</td>
+              <td class="px-4 py-2 border">2025-10-01</td>
+			  <td class="px-4 py-2 border">7:30 Am - 12:30 Pm</td>
+              <td class="px-4 py-2 border text-yellow-600 font-semibold">Late</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border">10</td>
+              <td class="px-4 py-2 border font-bold text-gray-700">Dela-Cruz, Kaden</td>
+              <td class="px-4 py-2 border">2025-10-01</td>
+			  <td class="px-4 py-2 border">7:30 Am - 12:30 Pm</td>
+              <td class="px-4 py-2 border text-green-600 font-semibold">Present</td>
+          
+            
+			</tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Back Button -->
+    <div class="mt-6">
+      <a href="AdminProfile.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700">
+        ⬅ Back to Class Profile
+      </a>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div id="studentModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-96">
+      <h2 class="text-lg font-bold mb-4">Add Student</h2>
+      
+      <form id="studentForm" class="space-y-3">
+        <div>
+          <label class="block font-semibold">Student Name</label>
+          <input type="text" id="studentName" class="w-full border px-3 py-2 rounded" required>
+        </div>
+        <div>
+          <label class="block font-semibold">Date</label>
+          <input type="date" id="attendanceDate" class="w-full border px-3 py-2 rounded" required>
+        </div>
+        <div>
+          <label class="block font-semibold">Time</label>
+          <input type="time" id="attendanceTime" class="w-full border px-3 py-2 rounded" required>
+        </div>
+        <div>
+          <label class="block font-semibold">Status</label>
+          <select id="attendanceStatus" class="w-full border px-3 py-2 rounded" required>
+            <option value="Present">Present</option>
+            <option value="Absent">Absent</option>
+            <option value="Late">Late</option>
+          </select>
+        </div>
+
+        <div class="flex justify-end gap-3 mt-4">
+          <button type="button" onclick="closeModal()" class="bg-gray-400 text-white px-4 py-2 rounded hover:bg-gray-500">
+            Cancel
+          </button>
+          <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    let studentCount = 1; // starting from 1
+
+    function openModal() {
+      document.getElementById("studentModal").classList.remove("hidden");
+    }
+
+    function closeModal() {
+      document.getElementById("studentModal").classList.add("hidden");
+    }
+
+    document.getElementById("studentForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      studentCount++;
+      const name = document.getElementById("studentName").value;
+      const date = document.getElementById("attendanceDate").value;
+      const time = document.getElementById("attendanceTime").value;
+      const status = document.getElementById("attendanceStatus").value;
+
+      let statusColor = "text-green-600";
+      if (status === "Absent") statusColor = "text-red-600";
+      if (status === "Late") statusColor = "text-yellow-600";
+
+      const table = document.getElementById("attendanceTable").getElementsByTagName("tbody")[0];
+      const newRow = table.insertRow();
+
+      newRow.innerHTML = `
+        <td class="px-4 py-2 border">${studentCount}</td>
+        <td class="px-4 py-2 border font-bold text-gray-700">${name}</td>
+        <td class="px-4 py-2 border">${date}</td>
+        <td class="px-4 py-2 border">${time}</td>
+        <td class="px-4 py-2 border ${statusColor} font-semibold">${status}</td>
+      `;
+
+      document.getElementById("studentForm").reset();
+      closeModal();
+    });
+  </script>
+</body>
+</html>

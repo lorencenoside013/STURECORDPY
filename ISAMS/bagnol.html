@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>StuRecordPy — Student Information</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .glass { background: rgba(255,255,255,0.8); backdrop-filter: blur(6px); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #e5e7eb; }
+  </style>
+</head>
+
+<body class="bg-slate-100 text-slate-800 antialiased">
+
+  <!-- HEADER -->
+  <header class="bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="rounded-full bg-gradient-to-r from-indigo-600 to-cyan-500 text-white p-2 shadow">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L3 7v7c0 5 4 9 9 9s9-4 9-9V7l-9-5z" fill="white"/>
+          </svg>
+        </div>
+        <h1 class="font-semibold text-lg">Arellano StuRecordPy</h1>
+      </div>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+       
+        <a href="StudentLogin.html" class="px-4 py-2 rounded-md bg-indigo-600 text-white shadow">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="max-w-5xl mx-auto px-6 py-10 space-y-10">
+
+    <!-- STUDENT INFORMATION CARD -->
+    <section class="glass rounded-2xl shadow-lg p-6 flex flex-col md:flex-row items-center md:items-start gap-6">
+      <img src="matt.jpg"
+           alt="Profile Picture"
+           class="w-36 h-36 rounded-full object-cover shadow-md border">
+      <div class="flex-1 space-y-2">
+        <h2 class="text-2xl font-bold">Bagnol, Matt </h2>
+        <p class="text-slate-600">Course: BS Information Technology — 3rd Year</p>
+        <p><strong>Student No:</strong> 23-20123</p>
+        <p><strong>Contact:</strong> 0991-121-2314</p>
+        <p><strong>Address:</strong> Pasig City </p>
+      </div>
+    </section>
+
+    <!-- GRADES TABLE -->
+    <section class="bg-white rounded-2xl shadow p-6">
+      <h3 class="text-lg font-semibold mb-4">Academic Grades</h3>
+      <table class="text-sm">
+        <thead class="bg-slate-100 text-slate-700">
+          <tr>
+            <th>Subject Code</th>
+            <th>Subject Title</th>
+            <th>Units</th>
+            <th>Grade</th>
+            <th>Remarks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>IT101</td>
+            <td>Introduction to Computing</td>
+            <td>3</td>
+            <td>1.25</td>
+            <td>Passed</td>
+          </tr>
+          <tr>
+            <td>IT202</td>
+            <td>Database Management Systems</td>
+            <td>3</td>
+            <td>1.50</td>
+            <td>Passed</td>
+          </tr>
+          <tr>
+            <td>IT305</td>
+            <td>Systems Integration & Architecture</td>
+            <td>3</td>
+            <td>1.75</td>
+            <td>Passed</td>
+          </tr>
+          <tr>
+            <td>GE101</td>
+            <td>Purposive Communication</td>
+            <td>3</td>
+            <td>1.50</td>
+            <td>Passed</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ATTENDANCE TABLE -->
+    <section class="bg-white rounded-2xl shadow p-6">
+      <h3 class="text-lg font-semibold mb-4">Attendance Records</h3>
+      <table class="text-sm">
+        <thead class="bg-slate-100 text-slate-700">
+          <tr>
+            <th>Date</th>
+            <th>Subject</th>
+            <th>Time In</th>
+            <th>Time Out</th>
+            <th>Remarks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sept 23, 2025</td>
+            <td>IT202 - Database Management</td>
+            <td>8:00 AM</td>
+            <td>9:30 AM</td>
+            <td>Present</td>
+          </tr>
+          <tr>
+            <td>Sept 24, 2025</td>
+            <td>IT305 - Systems Integration</td>
+            <td>9:35 AM</td>
+            <td>11:00 AM</td>
+            <td>Present</td>
+          </tr>
+          <tr>
+            <td>Sept 25, 2025</td>
+            <td>GE101 - Purposive Communication</td>
+            <td>8:15 AM</td>
+            <td>9:45 AM</td>
+            <td>Late</td>
+          </tr>
+          <tr>
+            <td>Sept 26, 2025</td>
+            <td>IT101 - Intro to Computing</td>
+            <td>Absent</td>
+            <td>Absent</td>
+            <td>Unexcused</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- OSA RECORDS -->
+    <section class="bg-white rounded-2xl shadow p-6">
+      <h3 class="text-lg font-semibold mb-4">OSA Records</h3>
+      <table class="text-sm">
+        <thead class="bg-slate-100 text-slate-700">
+          <tr>
+            <th>Date</th>
+            <th>Incident</th>
+            <th>Description</th>
+            <th>Action Taken</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Aug 10, 2025</td>
+            <td>Warning</td>
+            <td>Late submission of project in IT202</td>
+            <td>Verbal Warning</td>
+          </tr>
+          <tr>
+            <td>Sept 1, 2025</td>
+            <td>Advisory Note</td>
+            <td>Missed attendance for 3 consecutive days</td>
+            <td>Counseling Required</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-12 py-6 text-sm text-slate-600 bg-white border-t">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+      <div>
+        <strong>StuRecordPy</strong> © 2025 — All rights reserved.
+      </div>
+      <div class="mt-3 md:mt-0">
+        Contact: Christian.barutag@gmail.com | 0991 214 5467
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

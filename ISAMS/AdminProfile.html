@@ -1,0 +1,103 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>StuRecordPy — Student Profile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .glass { background: rgba(255,255,255,0.8); backdrop-filter: blur(6px); }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 antialiased">
+  <!-- HEADER -->
+  <header class="bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="rounded-full bg-gradient-to-r from-indigo-600 to-cyan-500 text-white p-2 shadow">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L3 7v7c0 5 4 9 9 9s9-4 9-9V7l-9-5z" fill="white"/>
+          </svg>
+        </div>
+        <h1 class="font-semibold text-lg">Arellano AdminRecordPy</h1>
+      </div>
+	  
+	  <button onclick="logout()" 
+      class="absolute top-4 right-6 px-4 py-2 rounded-md bg-red-600 text-white shadow hover:bg-red-700 transition">
+      Logout
+    </button>
+  </div>
+</header>
+
+<script>
+  function logout() {
+    alert("You have been logged out!");
+    window.location.href = "index.html";
+  }
+</script>
+
+      <nav class="hidden md:flex items-right  text-sm">  
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="max-w-7xl mx-auto px-6 py-8">
+    <!-- Student Profile Card -->
+    <section class="glass rounded-2xl shadow-lg p-6 flex flex-col md:flex-row items-center md:items-start gap-6">
+      <img src="logo.png"
+           alt="AU - LOGO"
+           class="w-32 h-32 rounded-full object-cover shadow-md border">
+      <div class="flex-1">
+        <h2 class="text-2xl font-bold">Admin</h2>
+        <p class="text-slate-600">ARELLANO UNIVERSITY</p>
+        <p class="mt-1 text-sm text-slate-500">ANDRES BONIFACIO CAMPUS</p>
+        <div class="mt-3 text-sm text-slate-600 space-y-1">
+          <p>📧 @arellano.edu.ph</p>
+          <p>📞 0912-345-6789</p>
+          <p>🏠 Pasig City, Metro Manila</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Access Cards -->
+    <section class="mt-8 grid md:grid-cols-4 gap-6">
+
+  <a href="attendance.html" class="bg-white p-5 rounded-lg shadow hover:shadow-md cursor-pointer block">
+    <h3 class="font-semibold">Attendance</h3>
+    <p class="text-sm text-slate-500 mt-2">Track absences and tardiness logs.</p>
+  </a>
+
+  <a href="guidance.html" class="bg-white p-5 rounded-lg shadow hover:shadow-md cursor-pointer block">
+    <h3 class="font-semibold">Guidance Records</h3>
+    <p class="text-sm text-slate-500 mt-2">Counseling and behavior notes.</p>
+  </a>
+
+  <a href="Generatedreport.html" class="bg-white p-5 rounded-lg shadow hover:shadow-md cursor-pointer block">
+    <h3 class="font-semibold">Generated report</h3>
+    <p class="text-sm text-slate-500 mt-2">Generate transcripts and progress reports.</p>
+  </a>
+  
+   <a href="Dashboard.html" class="bg-white p-5 rounded-lg shadow hover:shadow-md cursor-pointer block">
+    <h3 class="font-semibold">DashBoard</h3>
+    <p class="text-sm text-slate-500 mt-2">Generate transcripts and progress reports.</p>
+  </a>
+
+</section>
+
+
+  <!-- FOOTER -->
+  <footer class="mt-12 py-6 text-sm text-slate-600 bg-white border-t">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+      <div>
+        <strong>StuRecordPy</strong> © 2025 — All rights reserved.
+      </div>
+      <div class="mt-3 md:mt-0">
+        Contact: https://www.facebook.com/ArellanoUniversityOfficial 
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
