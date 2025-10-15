@@ -1,0 +1,2 @@
+# STURECORDPY
+Student record
